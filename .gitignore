@@ -1,0 +1,6 @@
+*.png
+/.idea
+*.zip
+/checkpoint
+*.index
+*.meta
