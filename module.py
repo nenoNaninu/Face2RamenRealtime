@@ -93,7 +93,7 @@ def generator_unet(image, options, reuse=False, name="generator"):
 
 
 def generator_resnet(image, options, reuse=False, name="generator"):
-    print 'gfdim ' + str(options.gf_dim)
+    print ('gfdim ' + str(options.gf_dim))
     with tf.variable_scope(name):
         # image is 256 x 256 x input_c_dim
         if reuse:
@@ -133,7 +133,7 @@ def generator_resnet(image, options, reuse=False, name="generator"):
         d2 = tf.nn.relu(instance_norm(d2, 'g_d2_bn'))
         d2 = tf.pad(d2, [[0, 0], [3, 3], [3, 3], [0, 0]], "REFLECT")
         pred = tf.nn.tanh(conv2d(d2, options.output_c_dim, 7, 1, padding='VALID', name='g_pred_c'))
-        print options.output_c_dim
+        print (options.output_c_dim)
 
         return pred
 

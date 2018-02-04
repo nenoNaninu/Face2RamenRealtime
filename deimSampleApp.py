@@ -52,7 +52,7 @@ def printFps():
     global count
     count += 1
     if previosTime + 1 < time.time():
-        print 'fps::'+str(count)
+        print ('fps::'+str(count))
         global previosTime
         previosTime = time.time()
         count = 0
